@@ -27,4 +27,4 @@
 > **💡 開源貢獻與在地化**
 >
 > 這是一項公開的開源專案，我們非常歡迎並感激任何形式的貢獻！詳細原文貢獻資訊請參考 [GitHub Repository](https://github.com/Remedy-Entertainment/USDBook)。
-> *(註：繁體中文版協同翻譯由 Antigravity AI 助理與社群共同維護)*
+> *(註：繁體中文版協同翻譯由 [Seadog Tso](https://github.com/sdtso-ux/USDBook-TW) 助理與社群共同維護)*
