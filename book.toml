@@ -8,8 +8,8 @@ src = "src"
 [output.html]
 
 
-git-repository-url = "https://github.com/Remedy-Entertainment/USDBook"
-edit-url-template = "https://github.com/Remedy-Entertainment/USDBook/edit/develop/{path}"
+# git-repository-url = "https://github.com/Remedy-Entertainment/USDBook"
+# edit-url-template = "https://github.com/Remedy-Entertainment/USDBook/edit/develop/{path}"
 additional-css = [
     "theme/custom.css",
     'theme/mdbook-admonish.css',
