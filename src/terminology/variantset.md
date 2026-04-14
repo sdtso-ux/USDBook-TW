@@ -1,22 +1,24 @@
-# VariantSet
+# VariantSet (變體集)
 
-VariantSets and variants allow for authoring a "switchable" state of a prim within a layer. In the example below, a top level prim with the name `Implicits` is authored which defines a VariantSet named `Shape`. This VariantSet defines a few different entries (aka variants ) that each do something different.
+VariantSets (變體集) 與其包含的 variant (變體分支)，賦予了圖層中的 prim 提供多層「可切換 (switchable)」狀態與組態的能力。在下方的範例中，一顆位於最頂層 (top-level) 名為 `Implicits` 的 prim 掛載了一組名為 `Shape` 的 VariantSet。此組 VariantSet 內部結合了多個不同獨立設定的 variant 選項，它們確保使用者在切換不同的支線選項時，能載入截然不同的型態設定與層級樹變更。
 
-When changing the active variant, USD will inject anything that is defined within that variant into the current composition. In our example, each variant adds a child to `Implicits` with differing types. One is a capsule, another a cube, a sphere, and so on.
+當使用者切換至不同的 active variant 取代當下預設值時，USD 會將該變體內所記錄的所有屬性與設定，直接匯入注射 (inject) 至系統主流的 composition (合成) 流程之中。在此具體範例中，各個 variant 分別為 `Implicits` 提供了不同 type 設定的子物件參與構成。選擇不同的 variant 便能手動切換生成為 Capsule (膠囊體)、Cube (方塊) 或是 Sphere (球體)。
 
-```admonish example title="Variant/VariantSet example"
-![Variant Sets](../images/terminology/variant_switching.gif)  
-```
+> **🖼️ Variant/VariantSet 切換範例**
+>
+> ![Variant Sets](../images/terminology/variant_switching.gif)
 
-Within variant definitions, you are essentially free to do whatever you want. If you wish to define a complete hierarchy in a variant, you can. Add references to other layers? You can. Expressing opinions on values or metadata, you can. However.
 
-```admonish warning title=""
-There can only ever be one Variant active at a time for a VariantSet.
-```
+在撰寫與定義 variant 時，您在架構上享有極大的開發彈性。您可以在單個 variant 模塊中建構全新的層級樹 hierarchy、利用 reference 參照外部的圖層檔案、追加屬性覆寫 (opinion) 或是設定 metadata。但在使用這項機制時遇到多個可選變數環境，有一個要點務必銘記在心。
+
+> **⚠️ 警告**
+>
+> 對於任何單獨的 VariantSet 而言，無論內部定義了多少可選的 variant (變體分支)，它的規矩是：『**同一個時間內絕對僅允許有一個 Variant 是處於啟動 (active) 狀態的！**』。
+
 
 ---
 
-```admonish note title=""
-↪ [USD Glossary - VariantSet](https://graphics.pixar.com/usd/release/glossary.html#usdglossary-VariantSet)  
-↪ [USD Glossary - Variant](https://graphics.pixar.com/usd/release/glossary.html#usdglossary-Variant)
-```
+> **📝 延伸閱讀**
+>
+> ↪ [USD Glossary - VariantSet](https://graphics.pixar.com/usd/release/glossary.html#usdglossary-VariantSet)  
+> ↪ [USD Glossary - Variant](https://graphics.pixar.com/usd/release/glossary.html#usdglossary-Variant)

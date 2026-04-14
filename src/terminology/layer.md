@@ -1,23 +1,24 @@
-# Layer
+# Layer (圖層)
 
-A Layer is a collection of Prims and their Properties that can be saved to/loaded from disk or memory. As such, it can be considered a "saveable hierarchy".
+Layer 是一個用來網羅 Prim 及其 Property 的集合體，它可以被儲存進硬碟中，或是被載入到記憶體裡供人讀取。正因如此，它其實可以被視作是一個「具備存檔能力的 hierarchy」。
 
-Standard USD Layers can be represented on-disk via
+業界標準的 USD Layer 可以透過以下這幾種實體檔案存在於硬碟中：
 
-| Extension    | Description |
+| 副檔名 (Extension)    | 描述 (Description) |
 |--------------|-----------|
-| `.usda` | ASCII Text, human-readable format      |
-| `.usdc`      | USD Crate file format. High performance binary not human-readable format  |
-| `.usd`      | either Crate or Text  |
-| `.usdz`      | uncompressed and packaged format (.zip)  |
+| `.usda` | ASCII 純文字，人類可以直接閱讀的結構    |
+| `.usdc`      | USD Crate 檔案格式。這是一種為了追求極致效能而生的高效能二進位檔 (binary file)，人類無法閱讀  |
+| `.usd`      | 可能是 Crate 也可能是純文字格式  |
+| `.usdz`      | 無壓縮的打包封裝格式 (.zip)  |
 
-```admonish info title=""
-USD allows for extending what you can load as a "Layer" via a special kind of plugin (`SdfFileFormat`). In fact, the file types listed above are actually all plugins of this type.  
-Using this `SdfFileFormat` plugin type, it is for example possible to also support loading `.fbx`, `.abc`, `.obj` (or anything really) in Usd.
-```
+> **ℹ️ 提示**
+>
+> USD 允許您透過一種極度特殊的 plugin 形式（即 `SdfFileFormat`）來無上限擴展那些能被作為「Layer」載入的檔案。說穿了，上面羅列的那些預設檔案類型，本質上也都是實作了這類型 plugin 的產物。  
+> 若您掌握了這種 `SdfFileFormat` plugin 的開發邏輯，您甚至可以實做出讓 USD 原生支援並載入諸如 `.fbx`、`.abc`、`.obj` (甚至是任何東西) 的強大整合能力。
+
 
 ---
 
-```admonish note title=""
-↪ [USD Glossary - Layer](https://graphics.pixar.com/usd/release/glossary.html#usdglossary-layer)
-```
+> **📝 延伸閱讀**
+>
+> ↪ [USD Glossary - Layer](https://graphics.pixar.com/usd/release/glossary.html#usdglossary-layer)

@@ -1,11 +1,11 @@
-# USD Terminology
+# USD 術語 (Terminology)
 
-With introductions out of the way, the following chapters will focus exclusively on the core terminology needed to be able to understand USD. It will be much easier to follow any tutorial on USD if you understand the fundamental jargon first.
+在前言告一段落後，接下來的章節將會全神貫注地專注在那些想理解 USD 就非懂不可的核心術語 (Terminology) 上。只要您能先把這些基礎的行話 (jargon) 給摸透，未來您在嘗試去跟隨各種 USD 教學時，絕對會感到如魚得水。
 
-It is recommended to read the pages within this chapter in order.
+強烈建議您按照順序來閱讀這一章裡的所有頁面。
 
-```admonish warning
-The contents within this chapter do not aim to be exhaustive as many concepts are overly simplified and others are simply missing.
-
-This is in other words **_not a replacement for the [official USD Glossary](https://graphics.pixar.com/usd/release/glossary.html)_** and it is strongly advised to read those pages afterwards.
-```
+> **⚠️ 警告**
+>
+> 這一章節的內容並不打算包山包海，有許多概念因為太過繁瑣而被刻意簡化，某些艱澀的點甚至會選擇直接略過。
+> 
+> 換言之，**這系列文章絕對_不應該直接拿來取代[官方的 USD 術語表 (Glossary)](https://graphics.pixar.com/usd/release/glossary.html)_**，我們強烈建議您在入門後，再去把官方的頁面給確實地啃過一遍。

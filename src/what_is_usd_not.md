@@ -1,25 +1,27 @@
-# What is it not?
+# USD 不是什麼？
 
-## Just a File Format
+## 不僅僅是一種檔案格式而已
 
-While the main "interface" of working with USD for many artists is through its file-on-disk representation, it's important to consider USD more as an ecosystem than another file type on disk.  
-Given its abilities and what it can offer, calling it a file format would be a disservice to the technology.
+雖然絕大部分的 Artist（美術藝術家）都是透過存在於硬碟上的實體檔案 ("file-on-disk") 來跟 USD 產生連結與互動的，但我們更傾向於將 USD 視為一個完整的「生態系統 (ecosystem)」，而不僅僅是一種寫在硬碟裡的新型副檔名而已。  
+如果考慮到它蘊含的巨大潛力與已經達成的無數創舉，單純稱它為「一種檔案格式」實在是滿委屈這項顛覆產業的技術的。
 
-USD can be molded to your needs or it can be used as-is. File-on-disk representations can be omitted altogether. The way you can refer to other USD scenes is extremely flexible. And you can even integrate any custom rendering engine via a simple plugin so it understands how to work with USD data, etc... 
+它就是一塊任您無縫塑形的黏土，或者，您當然也可以完全保持原狀，就這樣「開箱即用」的操作它。甚至，您可以完全省略將它存入硬碟這個步驟（全程在記憶體中生成與運作）。當它成為一種生態時，您連參照其他 USD 場景的方式都變得非常靈活。如果您是名開發者，更能透過編寫簡易的 plugin，整合任何業界主流或是客製化的算圖引擎 (rendering engine)，讓引擎徹底理解並渲染由 USD data 描述的世界。
 
-```admonish tip title="Hot tip!"
-If you use USD enough, it becomes a way of life 😄
-```
+> **💡 資深提示！**
+>
+> 只要您使用 USD 的頻率與時間夠久，它將會變成一種重塑您邏輯的信仰體驗 😄
 
-## A Replacement for Content _Creation_
 
-USD can do a lot of things, but it also cannot do quite a few other things. A major component of its architecture does not allow for _interactive values_. Meaning that values are resolved essentially "only once" and do not change unless the entire scene is "re-composed". In reality the way values are computed is a bit more complex than the aforementioned, but it's easier to think of it this way.
+## 它不能用來作為內容「創造」的替代品？
 
-From a design point of view, USD was built with "low-memory footprint, higher-latency data access" in mind. Thus, in order to allow for low memory usage, data access is slower than in a "high-memory footprint, low-latency access to data" paradigm. The latter sacrifices memory footprint in favor of fast data access, allowing for dynamic evaluations.
+USD 可以做到很多突破天際的事情，但它還是有些明顯「力有未逮」的界限。由於 USD 基礎架構的設計核心，並不允許您進行 _動態互動數值 (interactive values)_。意思是，通常在 USD 中這類 value 只會被計算與解析「一次」，除非整個場景發生了「重新合成 (re-composed)」，這組數值就不會再有任何動靜。雖然在真實世界裡，這些 value 的運算邏輯可能比上面我說的還要稍加複雜一點，但作為概念建立，把它想成這樣會讓您學習起來簡單很多。
 
-Because of this design decision, USD cannot easily express "dynamic" systems like Rigging which relies on fast dynamically computed data access. It can however via its extensibility allow studios to _define_ rigging concepts. But this is merely a _specification_, the rig itself would not be _evaluated_ inside USD and will require the host software (for example Autodesk Maya) to take that information and translate it into a rig that it can understand.
+從最初的系統設計角度來看，USD 是以「低記憶體佔用且高延遲性 data 讀取 (low-memory footprint, higher-latency data access)」為核心宗旨去打造的。因此，為了讓記憶體耗損降至最低限度，它在讀取與操作那些 data 時，速度絕對會比「佔用超高記憶體、換取無延遲存取與頻繁刷新資料」的系統還要慢上許多。後者為了達成即時運算邏輯，犧牲了龐大的記憶體佔用。
+
+正因為這個最核心的設計邏輯，USD 非常難以被拿來表達像是 Rigging（骨架綁定）這類高度依賴毫秒等級、即時與動態運算 data 頻繁存取的系統。但在這條死路外，因為它具備了「高擴展性」的潛能，這讓各大型視效工作室有辦法自行去 _定義 (define)_ 各自專屬的相關系統。可是，請記住，我們講的只是宣告了一個 _規範 (specification)_ 而已——這個骨架本身並不會在 USD 環境體系內被自動進行 _運算 (evaluated)_，它勢必還是得依賴著一個強大的宿主軟體（例如 Autodesk Maya），由宿主軟體將這些 USD 通訊訊息提取出來、吃進去，最後翻譯成該軟體獨家專利能看得懂的 Rigging 系統來操作。
 
 ----
-```admonish note title=""
-↪ [USD Intro - What Can't USD Do](https://graphics.pixar.com/usd/release/intro.html#what-can-t-usd-do)
-```
+> **📝 延伸閱讀**
+>
+> ↪ [USD Intro - What Can't USD Do (USD 到底不能做什麼？)](https://graphics.pixar.com/usd/release/intro.html#what-can-t-usd-do)
+

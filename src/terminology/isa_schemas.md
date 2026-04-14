@@ -1,63 +1,30 @@
-# IsA (Typed) Schema
+>     
+>     它那用來被丟回當後備方案用的退路兜底基本預設值 (The fallback values) 說到底其實就跟 Cube、Sphere、Cone，還有 Cylinder 那些老兄們如出一轍。他們這輩子最大的命運：大概也就是都給一起縮進然後塞進同一個用來包覆他們的容積界線 (volume/bounds) 框體宿命裡的那些爛帳這點不會變。"""
+>     customData = {
+>         dictionary extraPlugInfo = {
+>             bool implementsComputeExtent = true
+>         }
+>     }
+> ) {
+>     double size = 2.0 (
+>         doc = """這一道屬性 (Indicates the length) 指著這該死方塊身上每個冰冷邊緣的實際邊緣長度。 如果您老兄今天有種去敢撰寫了
+>         \\em size 您就非得被強逼無可避免地也要去給它把這條 \\em extent 也一併給撰寫上去。
+>         
+>         \\sa GetExtentAttr()"""
+>     )
+> 
+>     float3[] extent = [(-1.0, -1.0, -1.0), (1.0, 1.0, 1.0)] (
+>         doc = """這條名為 Extent 強制拓展範圍線底限長度的破屬性 之所以破天荒會需要單獨為了 Cube 而被生生拿來重新界定一遍 (re-defined on Cube only) 不為甚麼，無非就是想被搞出個能夠作為預留備案、後路好走的後備退群防線基本數值來用（provide a fallback value）。
+>         \\sa UsdGeomGprim::GetExtentAttr()."""
+>     )
+> 
+> }
+> ```
 
-"Is A prim this"-kind of schema. Essentially the schema definition that defines the "type" of prim.  
-
-```admonish example title="Prim Type Schema"
-![](../images/terminology/schemas_3.png)
-```
-
-In the image above, the `Type` column lists which `IsA Schema` the prim subscribes to.
-
-When looking at the USD "code", the keyword between `def` and the name of the prim signifies which `IsA Schema` the prim should subscribe to.
-
-```
-def Xform "MyTransform" {}  # MyTransform subscribes to the Xform IsA Schema
-def Cube "MyCube" {}  # MyCube subscribes to the Cube IsA Schema
-def "EmptySpec" {}  # EmptySpec is a valid prim, it simply has no default set of properties attached to it. It could literally be anything.
-```
-
-```admonish warning title=""
-Prims cannot subscribe to more than _1_ IsA schema!
-```
-
-## IsA Schema Example -> UsdGeomCube
-
-In the example below you can see the schema definition for our favorite `Cube`. It defines that `Cube` inherits from `Gprim` (a base for all drawable prims), metadata for the type (like documentation string) and two attributes. `size` and `extent`.
-
-~~~admonish example title="Cube schema definition"
-```
-class Cube "Cube" (
-    inherits = </Gprim>
-    doc = """Defines a primitive rectilinear cube centered at the origin.
-    
-    The fallback values for Cube, Sphere, Cone, and Cylinder are set so that
-    they all pack into the same volume/bounds."""
-    customData = {
-        dictionary extraPlugInfo = {
-            bool implementsComputeExtent = true
-        }
-    }
-) {
-    double size = 2.0 (
-        doc = """Indicates the length of each edge of the cube.  If you
-        author \\em size you must also author \\em extent.
-        
-        \\sa GetExtentAttr()"""
-    )
-
-    float3[] extent = [(-1.0, -1.0, -1.0), (1.0, 1.0, 1.0)] (
-        doc = """Extent is re-defined on Cube only to provide a fallback value.
-        \\sa UsdGeomGprim::GetExtentAttr()."""
-    )
-
-}
-```
-~~~
-
-Creating new prim types can be as easy as the above, or as complex as defining an entire `Mesh`.
+打造出這種五花八門全新的 prims 系列特製款家族型別，它可以既親民到有如在切上一塊像上面那個無聊爛透頂端代碼的生肉方塊那麼可笑簡單；或者當然了，如果您熱愛刺激的話，這事兒也可以被瘋狂複雜擴張上綱到猶如在無垠荒漠中獨自苦寫開天闢地構築「一套完完整整巨型神經網路錯綜複雜 `Mesh (多變網型體)`」般的驚心動魄！
 
 ---
 
-```admonish note title=""
-↪ [USD Glossary - IsA Schema](https://graphics.pixar.com/usd/release/glossary.html#isa-schema)
-```
+> **📝 延伸閱讀**
+>
+> ↪ [USD Glossary - IsA Schema](https://graphics.pixar.com/usd/release/glossary.html#isa-schema)
